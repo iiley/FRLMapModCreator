@@ -612,6 +612,7 @@ namespace PlayFab
         CannotEnableAnonymousPlayerCreation = 1611,
         ParentCustomerAccountNotFound = 1612,
         AccountLinkedToABannedPlayer = 1613,
+        AzureSubscriptionNotEligibleForLinking = 1614,
         MatchmakingEntityInvalid = 2001,
         MatchmakingPlayerAttributesInvalid = 2002,
         MatchmakingQueueNotFound = 2016,
@@ -948,6 +949,7 @@ namespace PlayFab
         UnsupportedEntityType = 23011,
         EntityTypeSpecifiedRequiresAggregationSource = 23012,
         PlayFabErrorEventNotSupportedForEntityType = 23013,
+        MetadataLengthExceeded = 23014,
         StoreMetricsRequestInvalidInput = 23501,
         StoreMetricsErrorRetrievingMetrics = 23502
     }

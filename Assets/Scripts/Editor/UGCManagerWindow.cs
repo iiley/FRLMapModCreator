@@ -209,12 +209,7 @@ namespace FRLMapMod.Editor
                 EditorGUILayout.BeginHorizontal();
                 if (GUILayout.Button("Refresh list", GUILayout.Width(160)))
                 {
-                    _isRefreshingItems = true;
-                    _service.RefreshItemsFromServer(success =>
-                    {
-                        _isRefreshingItems = false;
-                        Repaint();
-                    });
+                    RefreshList();
                 }
 
                 if (GUILayout.Button("Logout", GUILayout.Width(80)))
@@ -228,6 +223,17 @@ namespace FRLMapMod.Editor
             }
 
             EditorGUILayout.EndVertical();
+        }
+
+        private void RefreshList()
+        {
+            if (_isRefreshingItems) return;
+            _isRefreshingItems = true;
+            _service.RefreshItemsFromServer(success =>
+            {
+                _isRefreshingItems = false;
+                Repaint();
+            });
         }
 
         private void DrawCurrentSceneRegion()
@@ -353,6 +359,10 @@ namespace FRLMapMod.Editor
                 {
                     EditorUtility.ClearProgressBar();
                     Repaint();
+                    if (!success)
+                    {
+                        RefreshList();
+                    }
                 });
             }
         }
@@ -397,6 +407,10 @@ namespace FRLMapMod.Editor
                     {
                         EditorUtility.ClearProgressBar();
                         Repaint();
+                        if (!success)
+                        {
+                            RefreshList();
+                        }
                     });
                 }
             }
@@ -475,8 +489,8 @@ namespace FRLMapMod.Editor
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("Name", GUILayout.Width(160));
             GUILayout.Label("Scene Path", GUILayout.ExpandWidth(true));
-            GUILayout.Label("Status", GUILayout.Width(200));
-            GUILayout.Label("Actions", GUILayout.Width(150));
+            GUILayout.Label("Status", GUILayout.Width(230));
+            GUILayout.Label("Actions", GUILayout.Width(140));
             EditorGUILayout.EndHorizontal();
 
             GUILayout.Space(2f);
@@ -502,7 +516,7 @@ namespace FRLMapMod.Editor
             // GUILayout.Label(statusText, GUILayout.Width(200));
             
             var statusText = _service.GetStatusDisplayText(item);
-            EditorGUILayout.LabelField(statusText, _richLabelStyle,GUILayout.Width(220));
+            EditorGUILayout.LabelField(statusText, _richLabelStyle,GUILayout.Width(230));
 
 // Open scene button
             if (GUILayout.Button("Open", GUILayout.Width(70)))

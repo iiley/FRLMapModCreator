@@ -67,7 +67,7 @@ namespace FRLMapMod.Editor
 
         public bool HasValidSession => IsLoggedIn && AuthContext != null && entityKey != null;
 
-        public int trackModMaxCount { get; private set; } = 1;
+        public int trackModMaxCount { get; private set; } = 5;
         public float trackModMaxFileMB { get; private set; } = 10f;
 
         // -----------------------------
@@ -1168,7 +1168,7 @@ namespace FRLMapMod.Editor
 
             if (!hasPublished)
             {
-                return $"{draftStr}, Non-Publish";
+                return $"Non-Publish, {draftStr}";
             }
 
             string pv2 = string.IsNullOrEmpty(item.PublishedVersion) ? "?" : item.PublishedVersion;
