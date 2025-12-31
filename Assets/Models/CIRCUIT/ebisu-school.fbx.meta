@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 24192042bf34946cd99b7eea09a53f81
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BLOCK
+    100002: BLOCK_001
+    100004: BUILDING
+    100006: //RootNode
+    100008: GROUND_GRASS_0
+    100010: GROUND_GRASS_1
+    100012: GROUND_GRASS_2
+    100014: GROUND_GRASS_3
+    100016: GROUND_GRASS_4
+    100018: GROUND_GRASS_5
+    100020: GROUND_GRASS_6
+    100022: GROUND_GRASS_6_001
+    100024: GROUND_GRASS_6_002
+    100026: GROUND_GRASS_6_003
+    100028: GROUND_GROUND
+    100030: SKID0
+    100032: SKID1
+    100034: SKID2
+    100036: SKID_ON_WALL
+    100038: TRANS_GRASS
+    100040: TRANS_TREE
+    100042: TRANS_TREE2
+    100044: TRANS_TREES
+    400000: BLOCK
+    400002: BLOCK_001
+    400004: BUILDING
+    400006: //RootNode
+    400008: GROUND_GRASS_0
+    400010: GROUND_GRASS_1
+    400012: GROUND_GRASS_2
+    400014: GROUND_GRASS_3
+    400016: GROUND_GRASS_4
+    400018: GROUND_GRASS_5
+    400020: GROUND_GRASS_6
+    400022: GROUND_GRASS_6_001
+    400024: GROUND_GRASS_6_002
+    400026: GROUND_GRASS_6_003
+    400028: GROUND_GROUND
+    400030: SKID0
+    400032: SKID1
+    400034: SKID2
+    400036: SKID_ON_WALL
+    400038: TRANS_GRASS
+    400040: TRANS_TREE
+    400042: TRANS_TREE2
+    400044: TRANS_TREES
+    2100000: None__TRACK_psd_011__TRACK1_psd
+    2100002: None__TRANS_STUFF_SCHOOL_COURSE_psd
+    2100004: None__TRACK_psd_008__STONEBRICK_psd
+    2100006: None__TRACK_psd_010__BUILDINGS_psd
+    2100008: None__TRACK_psd_009__BUILDINGS_psd
+    2100010: None__TRACK-SKID_MARKS_psd
+    2100012: None__TRACK-SKID_MARKS_psd_001
+    2300000: BLOCK
+    2300002: BLOCK_001
+    2300004: BUILDING
+    2300006: GROUND_GRASS_0
+    2300008: GROUND_GRASS_1
+    2300010: GROUND_GRASS_2
+    2300012: GROUND_GRASS_3
+    2300014: GROUND_GRASS_4
+    2300016: GROUND_GRASS_5
+    2300018: GROUND_GRASS_6
+    2300020: GROUND_GRASS_6_001
+    2300022: GROUND_GRASS_6_002
+    2300024: GROUND_GRASS_6_003
+    2300026: GROUND_GROUND
+    2300028: SKID0
+    2300030: SKID1
+    2300032: SKID2
+    2300034: SKID_ON_WALL
+    2300036: TRANS_GRASS
+    2300038: TRANS_TREE
+    2300040: TRANS_TREE2
+    2300042: TRANS_TREES
+    3300000: BLOCK
+    3300002: BLOCK_001
+    3300004: BUILDING
+    3300006: GROUND_GRASS_0
+    3300008: GROUND_GRASS_1
+    3300010: GROUND_GRASS_2
+    3300012: GROUND_GRASS_3
+    3300014: GROUND_GRASS_4
+    3300016: GROUND_GRASS_5
+    3300018: GROUND_GRASS_6
+    3300020: GROUND_GRASS_6_001
+    3300022: GROUND_GRASS_6_002
+    3300024: GROUND_GRASS_6_003
+    3300026: GROUND_GROUND
+    3300028: SKID0
+    3300030: SKID1
+    3300032: SKID2
+    3300034: SKID_ON_WALL
+    3300036: TRANS_GRASS
+    3300038: TRANS_TREE
+    3300040: TRANS_TREE2
+    3300042: TRANS_TREES
+    4300000: GROUND_GRASS_6_003
+    4300002: GROUND_GRASS_6_002
+    4300004: GROUND_GRASS_6_001
+    4300006: TRANS_TREES
+    4300008: TRANS_TREE2
+    4300010: TRANS_TREE
+    4300012: BLOCK_001
+    4300014: GROUND_GROUND
+    4300016: GROUND_GRASS_5
+    4300018: GROUND_GRASS_4
+    4300020: GROUND_GRASS_3
+    4300022: GROUND_GRASS_2
+    4300024: GROUND_GRASS_0
+    4300026: GROUND_GRASS_1
+    4300028: BLOCK
+    4300030: BUILDING
+    4300032: GROUND_GRASS_6
+    4300034: SKID1
+    4300036: SKID2
+    4300038: SKID0
+    4300040: TRANS_GRASS
+    4300042: SKID_ON_WALL
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 0
+    tangentImportMode: 2
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
