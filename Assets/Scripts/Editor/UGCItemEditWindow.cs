@@ -471,12 +471,23 @@ namespace FRLMapMod.Editor
             }
 
             // Validate new version format
+            
             if (!UGCVersionHelper.TryParseVersion(newVersion, out var newMajor, out var newMinor))
             {
                 EditorUtility.DisplayDialog(
                     "Create New Version",
                     "Invalid version format.\n\nIt must be in 'major.minor' format, " +
-                    "with each part a non-negative integer up to 3 digits (e.g. 0.1, 1.0, 10.25).",
+                    "with each part a [0-255] number (e.g. 0.1, 1.0, 10.25).",
+                    "OK");
+                return;
+            }
+            
+            if(newMajor < 0 || newMajor > 255 || newMinor < 0 || newMinor > 255)
+            {
+                EditorUtility.DisplayDialog(
+                    "Create New Version",
+                    "Invalid version format.\n\nIt must be in 'major.minor' format, " +
+                    "with each part a [0-255] number (e.g. 0.1, 1.0, 10.25).",
                     "OK");
                 return;
             }
