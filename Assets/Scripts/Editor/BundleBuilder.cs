@@ -42,7 +42,7 @@ namespace FRLMapMod.Editor
                 "Build & Upload Bundle",
                 "Build for iOS...",
                 0.2f);
-            dataIos = BuildSingle(BuildTarget.StandaloneWindows64, scenePath);
+            dataIos = BuildSingle(BuildTarget.iOS, scenePath);
 
             EditorUtility.DisplayProgressBar(
                 "Build & Upload Bundle",
@@ -64,9 +64,9 @@ namespace FRLMapMod.Editor
                 TEMP_BUNDLE_PATH,
                 new[] { build },
                 BuildAssetBundleOptions.ChunkBasedCompression,
-                BuildTarget.StandaloneWindows64 // 可根据需要切换 iOS / Windows
+                platform // 可根据需要切换 iOS / Windows
             );
-            string fullPath = Path.Combine(TEMP_BUNDLE_PATH, build.assetBundleName);
+            var fullPath = Path.Combine(TEMP_BUNDLE_PATH, build.assetBundleName);
 
             // 3️⃣ 读取字节数据
             var data = File.ReadAllBytes(fullPath);
