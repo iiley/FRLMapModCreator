@@ -7,6 +7,8 @@ By creating, submitting, or uploading Content for FR Legends, you acknowledge th
 
 ### Create a Custom Track
 
+Download and the open this project in Unity, only **Unity 2022.3.x** is supported.
+
 Create your custom track by modifying the provided `MapExample.scene`.  
 Save your scene as, for example, `YourTrack.scene`.
 
