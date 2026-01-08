@@ -335,7 +335,7 @@ namespace FRLMapMod.Editor
                 {
                     if (EditorUtility.DisplayDialog(
                             "Delete UGC Item",
-                            $"Are you sure you want to delete '{currentItem.Title}'?\nThis will delete both draft and published versions on PlayFab.",
+                            $"Are you sure you want to delete '{currentItem.Title}'?",
                             "Delete", "Cancel"))
                     {
                         _service.DeleteItemOnServer(currentItem, success => { Repaint(); });
@@ -575,7 +575,7 @@ namespace FRLMapMod.Editor
             {
                 if (EditorUtility.DisplayDialog(
                         "Delete UGC Item",
-                        $"Are you sure you want to delete '{item.Title}'?\nThis will delete both draft and published versions on PlayFab.",
+                        $"Are you sure you want to delete '{item.Title}'?",
                         "Delete", "Cancel"))
                 {
                     _service.DeleteItemOnServer(item, success => { Repaint(); });

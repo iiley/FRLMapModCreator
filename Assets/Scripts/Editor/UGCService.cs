@@ -659,34 +659,19 @@ namespace FRLMapMod.Editor
                 onCompleted?.Invoke(false);
                 return;
             }
-
-            var request = new DeleteItemRequest
-            {
-                AuthenticationContext = AuthContext,
-                Entity = entity,
-                Id = item.ItemId
-            };
-
+            
             EditorUtility.DisplayProgressBar(
                 "Delete Item",
                 $"Deleting '{item.Title}'...",
                 0.5f);
-            PlayFabEconomyAPI.DeleteItem(
-                request,
-                result =>
+            UpdateItemState(item, "Delete", null, b =>
+            {
+                EditorUtility.ClearProgressBar();
+                if (b)
                 {
-                    EditorUtility.ClearProgressBar();
                     _items.Remove(item);
-                    Debug.Log($"[UGCService] Deleted UGC map item '{item.Title}' (ItemId={item.ItemId}).");
-                    onCompleted?.Invoke(true);
-                },
-                error =>
-                {
-                    EditorUtility.ClearProgressBar();
-                    Debug.LogError(
-                        $"[UGCService] Failed to delete UGC map item '{item.ItemId}': {error.Error} - {error.ErrorMessage}");
-                    onCompleted?.Invoke(false);
-                });
+                }
+            });
         }
 
         /// <summary>
