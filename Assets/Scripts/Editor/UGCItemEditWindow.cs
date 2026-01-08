@@ -59,7 +59,7 @@ namespace FRLMapMod.Editor
         private const int SCREENSHOT_MAX_COUNT = 5;
         
         private const int MAX_TITLE_LENGTH = 20;
-        private const int MAX_DESC_LENGTH = 100;
+        private const int MAX_DESC_LENGTH = 2000;
         
 
         private readonly Texture2D[] _screenshotTextures = new Texture2D[SCREENSHOT_MAX_COUNT];

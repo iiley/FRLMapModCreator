@@ -395,6 +395,13 @@ namespace FRLMapMod.Editor
                 if(open) UGCItemEditWindow.Open(_service, item);
                 return;
             }
+
+            if (!CheckMapSceneValid.CheckCurrentScene(out var errorMessage))
+            {
+                EditorUtility.DisplayDialog("Publish Failed",
+                    errorMessage, "OK");
+                return;
+            }
             
             if (item.Bundles is { Count: >= 2 })
             {
