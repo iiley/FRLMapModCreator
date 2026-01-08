@@ -47,6 +47,8 @@ Once the build and upload process is complete, return to the manager window and 
 ![Step 5 - Publish Track](/docs/images/publish.jpg)
 
 After publishing, the track will enter the review process and await approval by the FR Legends team.
+> You may delete a map at any time if it has not been published or is not currently under review. For published maps, you must contact the FR Legends team to request removal.
+
 
 ---
 

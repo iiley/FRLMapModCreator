@@ -271,7 +271,7 @@ namespace FRLMapMod.Editor
 
                 if (!_showCreateModForCurrentScene)
                 {
-                    if (GUILayout.Button("Create MOD", GUILayout.Width(120)))
+                    if (GUILayout.Button("Create New Map", GUILayout.Width(120)))
                     {
                         _showCreateModForCurrentScene = true;
                         _newModNameForCurrentScene = activeScene.name;
@@ -437,7 +437,7 @@ namespace FRLMapMod.Editor
             EnsureService();
 
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Create MOD for Current Scene", EditorStyles.miniBoldLabel);
+            EditorGUILayout.LabelField("Create Map for Current Scene", EditorStyles.miniBoldLabel);
 
             _newModNameForCurrentScene = EditorGUILayout.TextField("Name", _newModNameForCurrentScene);
 
@@ -446,7 +446,7 @@ namespace FRLMapMod.Editor
             {
                 
                 EditorUtility.DisplayProgressBar(
-                    "Create MOD",
+                    "Create New Map",
                     $"Creating '{_newModNameForCurrentScene}'...",
                     0.5f);
                 _service.CreateItemOnServerForScene(scenePath, _newModNameForCurrentScene, createdItem =>
@@ -544,7 +544,7 @@ namespace FRLMapMod.Editor
                         "Open Scene",
                         $"Scene file not found:\n{scenePath}\n\n" +
                         "This scene might have been moved or deleted.\n" +
-                        "Do you want to retarget this MOD to another scene?",
+                        "Do you want to retarget this map to another scene?",
                         "Retarget", "Cancel");
 
                     if (retarget)
