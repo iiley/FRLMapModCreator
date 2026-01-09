@@ -868,6 +868,14 @@ namespace FRLMapMod.Editor
 
         private void BuildAndUploadBundle()
         {
+            
+            if (!CheckMapSceneValid.CheckCurrentScene(out var errorMessage))
+            {
+                EditorUtility.DisplayDialog("Publish Failed",
+                    errorMessage, "OK");
+                return;
+            }
+            
             EditorUtility.DisplayProgressBar(
                 "Build & Upload Bundle",
                 "Preparing Build...",

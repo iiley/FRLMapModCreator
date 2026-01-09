@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -104,6 +105,71 @@ namespace FRLMapMod.Editor
                 if (!refOk)
                 {
                     isValid = false;
+                }
+            }
+
+            // 新增：辅助函数 - 获取 GameObject 在场景内的完整路径
+            string GetGameObjectPath(GameObject go)
+            {
+                if (go == null) return "(null)";
+                var names = new List<string>();
+                Transform t = go.transform;
+                while (t != null)
+                {
+                    names.Add(t.name);
+                    t = t.parent;
+                }
+                names.Reverse();
+                return string.Join("->", names);
+            }
+
+            // Check all Material, accept only these shaders
+            {
+                var allowedShaders = new HashSet<string>
+                {
+                    "FR Legend/Car Outline",
+                    "FR Legend/Hard Edge Unlit",
+                    "FR Legend/SkidMarks",
+                    "FR Legend/Toon Outline",
+                    "Projector/Multiply",
+                    "Sprites/Default",
+                };
+
+                // 遍历 Renderer，实时检查 sharedMaterials，发现第一个不允许的立即返回失败并包含场景路径
+                var renderers = Object.FindObjectsOfType<Renderer>(true);
+                foreach (var r in renderers)
+                {
+                    var shared = r.sharedMaterials;
+                    if (shared == null) continue;
+                    foreach (var m in shared)
+                    {
+                        if (m == null) continue;
+                        var shaderName = m.shader ? m.shader.name : "(null shader)";
+                        if (!allowedShaders.Contains(shaderName))
+                        {
+                            var assetPath = AssetDatabase.GetAssetPath(m);
+                            var path = GetGameObjectPath(r.gameObject);
+                            errorMessage = $"Material '{m.name}' (path: {assetPath}) uses disallowed shader '{shaderName}'. Used on: {path}";
+                            return false; // 立即返回
+                        }
+                    }
+                }
+
+                // 再检查 Projector，用法类似：若发现不允许的 shader 立即返回
+                var projectors = Object.FindObjectsOfType<Projector>(true);
+                foreach (var p in projectors)
+                {
+                    if (p == null) continue;
+                    var m = p.material;
+                    if (m == null) continue;
+                    var shaderName = m.shader ? m.shader.name : "(null shader)";
+                    if (!allowedShaders.Contains(shaderName))
+                    {
+                        var assetPath = AssetDatabase.GetAssetPath(m);
+                        var path = GetGameObjectPath(p.gameObject);
+                        errorMessage = $"Material '{m.name}' (path: {assetPath}) uses disallowed shader '{shaderName}'. Used on: {path}";
+                        return false; // 立即返回
+                    }
                 }
             }
 

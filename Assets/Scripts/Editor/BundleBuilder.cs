@@ -64,7 +64,7 @@ namespace FRLMapMod.Editor
                 TEMP_BUNDLE_PATH,
                 new[] { build },
                 BuildAssetBundleOptions.ChunkBasedCompression,
-                platform // 可根据需要切换 iOS / Windows
+                platform // 可根据需要切换 iOS / Android
             );
             var fullPath = Path.Combine(TEMP_BUNDLE_PATH, build.assetBundleName);
 
