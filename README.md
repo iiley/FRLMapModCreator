@@ -5,9 +5,14 @@ By creating, submitting, or uploading Content for FR Legends, you acknowledge th
 
 ## Tutorials
 
-### Create a Custom Track
+### Installation
 
 Download and the open this project in Unity, only **Unity 2022.3.x** is supported.
+Make sure your unity have both **Android Build Support** and **iOS Build Support** modules installed.
+![Step 0 - Unity Installation](/docs/images/unity_modules.jpg)
+
+### Create a Custom Track
+
 
 Create your custom track by modifying the provided `MapExample.unity`.  
 Save your scene as, for example, `YourTrack.unity`.
