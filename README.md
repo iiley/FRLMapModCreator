@@ -17,6 +17,15 @@ Make sure your unity have both **Android Build Support** and **iOS Build Support
 Create your custom track by modifying the provided `MapExample.unity`.  
 Save your scene as, for example, `YourTrack.unity`.
 
+
+> Please note that your final built asset bundle is limited to 10MB, if it is larger than that, you need to optimize the Mesh and Textures.
+> Suggestion for optimization:
+> - Use Mesh Simplification tools to reduce polygon count, less than 10,000 triangles is suggested.
+> - Compress textures using appropriate formats (e.g., ASTC/ETC for Android, ASTC/PVRTC for iOS).
+> - Remove any unused assets from the scene.
+
+> About the Layers, make sure the ground is using the "Ground" layer, Walls is using "Wall" layer, and all other objects are using the "Default" layer.
+
 ---
 
 ### UGC Map Manager
