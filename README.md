@@ -17,8 +17,11 @@ Make sure your unity have both **Android Build Support** and **iOS Build Support
 Create your custom track by modifying the provided `MapExample.unity`.  
 Save your scene as, for example, `YourTrack.unity`.
 
+> **Important:**  
+> Make sure your scene meets the following requirements before building and uploading:
+> - The default max count of maps for each account is 5. If you need more, please contact the FR Legends team.
+> - The final built asset bundle is limited to 10MB, if it is larger than that, you need to optimize the Mesh and Textures.
 
-> Please note that your final built asset bundle is limited to 10MB, if it is larger than that, you need to optimize the Mesh and Textures.
 > Suggestion for optimization:
 > - Use Mesh Simplification tools to reduce polygon count, less than 10,000 triangles is suggested.
 > - Compress textures using appropriate formats (e.g., ASTC/ETC for Android, ASTC/PVRTC for iOS).

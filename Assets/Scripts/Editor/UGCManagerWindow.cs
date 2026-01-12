@@ -398,6 +398,20 @@ namespace FRLMapMod.Editor
             
             if (item.Bundles is { Count: >= 2 })
             {
+                if (item.BundleSizeAndroid > _service.trackModMaxFileMB)
+                {
+                    EditorUtility.DisplayDialog("Publish Failed",
+                    $"The android bundle is too large {item.BundleSizeAndroid:F4}MB > {_service.trackModMaxFileMB}MB, please optimize the mesh and texture then rebuild it.", "OK");
+                    return;
+                }
+
+                if (item.BundleSizeIos > _service.trackModMaxFileMB)
+                {
+                    EditorUtility.DisplayDialog("Publish Failed",
+                        $"The iOs bundle is too large {item.BundleSizeAndroid:F4}MB > {_service.trackModMaxFileMB}MB, please optimize the mesh and texture then rebuild it.", "OK");
+                    return;
+                }
+                
                 if (EditorUtility.DisplayDialog("Publish Confirmation",
                         $"Please check is the bundles are newest ready?\n\n{item.BundleDetails}", "Ready, Go Publish",
                         "Cancel"))

@@ -195,7 +195,7 @@ namespace FRLMapMod.Editor
             }
         }
 
-        public string BundleSizeIos
+        public double BundleSizeIos
         {
             get
             {
@@ -203,14 +203,14 @@ namespace FRLMapMod.Editor
                 {
                     if (dp.TryGetValue(UGCService.BUNDLE_SIZE_IOS_KEY, out var value) && value != null)
                     {
-                        return $"{value:F4}";
+                        return Convert.ToDouble(value);
                     }
                 }
-                return "0";
+                return 0;
             }
         }
         
-        public string BundleSizeAndroid
+        public double BundleSizeAndroid
         {
             get
             {
@@ -218,12 +218,16 @@ namespace FRLMapMod.Editor
                 {
                     if (dp.TryGetValue(UGCService.BUNDLE_SIZE_ANDROID_KEY, out var value) && value != null)
                     {
-                        return $"{value:F4}";
+                        return Convert.ToDouble(value);
                     }
                 }
-                return "0";
+                return 0;
             }
         }
+        
+        public string BundleSizeIosString => $"{BundleSizeIos:F4}";
+
+        public string BundleSizeAndroidString => $"{BundleSizeAndroid:F4}";
 
         public string BundleDetails
         {
@@ -232,7 +236,7 @@ namespace FRLMapMod.Editor
                 var bundles = Bundles;
                 if (bundles is { Count: > 0 })
                 {
-                    return $"Last Upload Time: {BundleUploadTime:G}\nios size:{BundleSizeIos}MB\nandroid size:{BundleSizeAndroid}MB";
+                    return $"Last Upload Time: {BundleUploadTime:G}\nios size:{BundleSizeIosString}MB\nandroid size:{BundleSizeAndroidString}MB";
                 }
                 return "Bundle: <color=red>Empty!</color>";
             }

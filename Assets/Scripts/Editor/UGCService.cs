@@ -67,7 +67,7 @@ namespace FRLMapMod.Editor
 
         public bool HasValidSession => IsLoggedIn && AuthContext != null && entityKey != null;
 
-        public int trackModMaxCount { get; private set; } = 5;
+        public int trackModMaxCount { get; private set; } = 10;
         public float trackModMaxFileMB { get; private set; } = 10f;
 
         // -----------------------------
