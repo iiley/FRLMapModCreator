@@ -25,6 +25,7 @@ Save your scene as, for example, `YourTrack.unity`.
 
 > Suggestion for optimization:
 > - Use Mesh Simplification tools to reduce polygon count, less than 10,000 triangles is suggested.
+> - Create duplicate objects (such as trees, barrels, curbs, etc.) as linked meshes in your modeling tool, or create a single model and duplicate/place it as a prefab in Unity. (This is particularly effective)
 > - Compress textures using appropriate formats (e.g., ASTC/ETC for Android, ASTC/PVRTC for iOS).
 > - Remove any unused assets from the scene.
 
