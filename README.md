@@ -21,6 +21,7 @@ Save your scene as, for example, `YourTrack.unity`.
 > Make sure your scene meets the following requirements before building and uploading:
 > - The default max count of maps for each account is 5. If you need more, please contact the FR Legends team.
 > - The final built asset bundle is limited to 10MB, if it is larger than that, you need to optimize the Mesh and Textures.
+> - Make sure your Online Locators is well set that indicates the spawn position of the cars (1-12 positions).
 
 > Suggestion for optimization:
 > - Use Mesh Simplification tools to reduce polygon count, less than 10,000 triangles is suggested.
