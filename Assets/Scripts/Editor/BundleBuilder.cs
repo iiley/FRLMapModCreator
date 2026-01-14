@@ -67,7 +67,16 @@ namespace FRLMapMod.Editor
                 platform // 可根据需要切换 iOS / Android
             );
             var fullPath = Path.Combine(TEMP_BUNDLE_PATH, build.assetBundleName);
-
+            
+            if (!File.Exists(fullPath))
+            {
+                var linuxPath = Path.Combine(TEMP_BUNDLE_PATH, build.assetBundleName.ToLower());
+                if (File.Exists(linuxPath))
+                {
+                    File.Move(linuxPath, linuxPath + ".tmp");
+                    File.Move(linuxPath + ".tmp", fullPath);
+                }
+            }
             // 3️⃣ 读取字节数据
             var data = File.ReadAllBytes(fullPath);
             Debug.Log($"✅ {build.assetBundleName} built, size = {data.Length / 1024f / 1024f:F2} MB");
