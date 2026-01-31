@@ -1,131 +1,371 @@
 fileFormatVersion: 2
 guid: 24192042bf34946cd99b7eea09a53f81
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: BLOCK
-    100002: BLOCK_001
-    100004: BUILDING
-    100006: //RootNode
-    100008: GROUND_GRASS_0
-    100010: GROUND_GRASS_1
-    100012: GROUND_GRASS_2
-    100014: GROUND_GRASS_3
-    100016: GROUND_GRASS_4
-    100018: GROUND_GRASS_5
-    100020: GROUND_GRASS_6
-    100022: GROUND_GRASS_6_001
-    100024: GROUND_GRASS_6_002
-    100026: GROUND_GRASS_6_003
-    100028: GROUND_GROUND
-    100030: SKID0
-    100032: SKID1
-    100034: SKID2
-    100036: SKID_ON_WALL
-    100038: TRANS_GRASS
-    100040: TRANS_TREE
-    100042: TRANS_TREE2
-    100044: TRANS_TREES
-    400000: BLOCK
-    400002: BLOCK_001
-    400004: BUILDING
-    400006: //RootNode
-    400008: GROUND_GRASS_0
-    400010: GROUND_GRASS_1
-    400012: GROUND_GRASS_2
-    400014: GROUND_GRASS_3
-    400016: GROUND_GRASS_4
-    400018: GROUND_GRASS_5
-    400020: GROUND_GRASS_6
-    400022: GROUND_GRASS_6_001
-    400024: GROUND_GRASS_6_002
-    400026: GROUND_GRASS_6_003
-    400028: GROUND_GROUND
-    400030: SKID0
-    400032: SKID1
-    400034: SKID2
-    400036: SKID_ON_WALL
-    400038: TRANS_GRASS
-    400040: TRANS_TREE
-    400042: TRANS_TREE2
-    400044: TRANS_TREES
-    2100000: None__TRACK_psd_011__TRACK1_psd
-    2100002: None__TRANS_STUFF_SCHOOL_COURSE_psd
-    2100004: None__TRACK_psd_008__STONEBRICK_psd
-    2100006: None__TRACK_psd_010__BUILDINGS_psd
-    2100008: None__TRACK_psd_009__BUILDINGS_psd
-    2100010: None__TRACK-SKID_MARKS_psd
-    2100012: None__TRACK-SKID_MARKS_psd_001
-    2300000: BLOCK
-    2300002: BLOCK_001
-    2300004: BUILDING
-    2300006: GROUND_GRASS_0
-    2300008: GROUND_GRASS_1
-    2300010: GROUND_GRASS_2
-    2300012: GROUND_GRASS_3
-    2300014: GROUND_GRASS_4
-    2300016: GROUND_GRASS_5
-    2300018: GROUND_GRASS_6
-    2300020: GROUND_GRASS_6_001
-    2300022: GROUND_GRASS_6_002
-    2300024: GROUND_GRASS_6_003
-    2300026: GROUND_GROUND
-    2300028: SKID0
-    2300030: SKID1
-    2300032: SKID2
-    2300034: SKID_ON_WALL
-    2300036: TRANS_GRASS
-    2300038: TRANS_TREE
-    2300040: TRANS_TREE2
-    2300042: TRANS_TREES
-    3300000: BLOCK
-    3300002: BLOCK_001
-    3300004: BUILDING
-    3300006: GROUND_GRASS_0
-    3300008: GROUND_GRASS_1
-    3300010: GROUND_GRASS_2
-    3300012: GROUND_GRASS_3
-    3300014: GROUND_GRASS_4
-    3300016: GROUND_GRASS_5
-    3300018: GROUND_GRASS_6
-    3300020: GROUND_GRASS_6_001
-    3300022: GROUND_GRASS_6_002
-    3300024: GROUND_GRASS_6_003
-    3300026: GROUND_GROUND
-    3300028: SKID0
-    3300030: SKID1
-    3300032: SKID2
-    3300034: SKID_ON_WALL
-    3300036: TRANS_GRASS
-    3300038: TRANS_TREE
-    3300040: TRANS_TREE2
-    3300042: TRANS_TREES
-    4300000: GROUND_GRASS_6_003
-    4300002: GROUND_GRASS_6_002
-    4300004: GROUND_GRASS_6_001
-    4300006: TRANS_TREES
-    4300008: TRANS_TREE2
-    4300010: TRANS_TREE
-    4300012: BLOCK_001
-    4300014: GROUND_GROUND
-    4300016: GROUND_GRASS_5
-    4300018: GROUND_GRASS_4
-    4300020: GROUND_GRASS_3
-    4300022: GROUND_GRASS_2
-    4300024: GROUND_GRASS_0
-    4300026: GROUND_GRASS_1
-    4300028: BLOCK
-    4300030: BUILDING
-    4300032: GROUND_GRASS_6
-    4300034: SKID1
-    4300036: SKID2
-    4300038: SKID0
-    4300040: TRANS_GRASS
-    4300042: SKID_ON_WALL
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: BLOCK
+  - first:
+      1: 100002
+    second: BLOCK_001
+  - first:
+      1: 100004
+    second: BUILDING
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: GROUND_GRASS_0
+  - first:
+      1: 100010
+    second: GROUND_GRASS_1
+  - first:
+      1: 100012
+    second: GROUND_GRASS_2
+  - first:
+      1: 100014
+    second: GROUND_GRASS_3
+  - first:
+      1: 100016
+    second: GROUND_GRASS_4
+  - first:
+      1: 100018
+    second: GROUND_GRASS_5
+  - first:
+      1: 100020
+    second: GROUND_GRASS_6
+  - first:
+      1: 100022
+    second: GROUND_GRASS_6_001
+  - first:
+      1: 100024
+    second: GROUND_GRASS_6_002
+  - first:
+      1: 100026
+    second: GROUND_GRASS_6_003
+  - first:
+      1: 100028
+    second: GROUND_GROUND
+  - first:
+      1: 100030
+    second: SKID0
+  - first:
+      1: 100032
+    second: SKID1
+  - first:
+      1: 100034
+    second: SKID2
+  - first:
+      1: 100036
+    second: SKID_ON_WALL
+  - first:
+      1: 100038
+    second: TRANS_GRASS
+  - first:
+      1: 100040
+    second: TRANS_TREE
+  - first:
+      1: 100042
+    second: TRANS_TREE2
+  - first:
+      1: 100044
+    second: TRANS_TREES
+  - first:
+      4: 400000
+    second: BLOCK
+  - first:
+      4: 400002
+    second: BLOCK_001
+  - first:
+      4: 400004
+    second: BUILDING
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: GROUND_GRASS_0
+  - first:
+      4: 400010
+    second: GROUND_GRASS_1
+  - first:
+      4: 400012
+    second: GROUND_GRASS_2
+  - first:
+      4: 400014
+    second: GROUND_GRASS_3
+  - first:
+      4: 400016
+    second: GROUND_GRASS_4
+  - first:
+      4: 400018
+    second: GROUND_GRASS_5
+  - first:
+      4: 400020
+    second: GROUND_GRASS_6
+  - first:
+      4: 400022
+    second: GROUND_GRASS_6_001
+  - first:
+      4: 400024
+    second: GROUND_GRASS_6_002
+  - first:
+      4: 400026
+    second: GROUND_GRASS_6_003
+  - first:
+      4: 400028
+    second: GROUND_GROUND
+  - first:
+      4: 400030
+    second: SKID0
+  - first:
+      4: 400032
+    second: SKID1
+  - first:
+      4: 400034
+    second: SKID2
+  - first:
+      4: 400036
+    second: SKID_ON_WALL
+  - first:
+      4: 400038
+    second: TRANS_GRASS
+  - first:
+      4: 400040
+    second: TRANS_TREE
+  - first:
+      4: 400042
+    second: TRANS_TREE2
+  - first:
+      4: 400044
+    second: TRANS_TREES
+  - first:
+      21: 2100000
+    second: None__TRACK_psd_011__TRACK1_psd
+  - first:
+      21: 2100002
+    second: None__TRANS_STUFF_SCHOOL_COURSE_psd
+  - first:
+      21: 2100004
+    second: None__TRACK_psd_008__STONEBRICK_psd
+  - first:
+      21: 2100006
+    second: None__TRACK_psd_010__BUILDINGS_psd
+  - first:
+      21: 2100008
+    second: None__TRACK_psd_009__BUILDINGS_psd
+  - first:
+      21: 2100010
+    second: None__TRACK-SKID_MARKS_psd
+  - first:
+      21: 2100012
+    second: None__TRACK-SKID_MARKS_psd_001
+  - first:
+      23: 2300000
+    second: BLOCK
+  - first:
+      23: 2300002
+    second: BLOCK_001
+  - first:
+      23: 2300004
+    second: BUILDING
+  - first:
+      23: 2300006
+    second: GROUND_GRASS_0
+  - first:
+      23: 2300008
+    second: GROUND_GRASS_1
+  - first:
+      23: 2300010
+    second: GROUND_GRASS_2
+  - first:
+      23: 2300012
+    second: GROUND_GRASS_3
+  - first:
+      23: 2300014
+    second: GROUND_GRASS_4
+  - first:
+      23: 2300016
+    second: GROUND_GRASS_5
+  - first:
+      23: 2300018
+    second: GROUND_GRASS_6
+  - first:
+      23: 2300020
+    second: GROUND_GRASS_6_001
+  - first:
+      23: 2300022
+    second: GROUND_GRASS_6_002
+  - first:
+      23: 2300024
+    second: GROUND_GRASS_6_003
+  - first:
+      23: 2300026
+    second: GROUND_GROUND
+  - first:
+      23: 2300028
+    second: SKID0
+  - first:
+      23: 2300030
+    second: SKID1
+  - first:
+      23: 2300032
+    second: SKID2
+  - first:
+      23: 2300034
+    second: SKID_ON_WALL
+  - first:
+      23: 2300036
+    second: TRANS_GRASS
+  - first:
+      23: 2300038
+    second: TRANS_TREE
+  - first:
+      23: 2300040
+    second: TRANS_TREE2
+  - first:
+      23: 2300042
+    second: TRANS_TREES
+  - first:
+      33: 3300000
+    second: BLOCK
+  - first:
+      33: 3300002
+    second: BLOCK_001
+  - first:
+      33: 3300004
+    second: BUILDING
+  - first:
+      33: 3300006
+    second: GROUND_GRASS_0
+  - first:
+      33: 3300008
+    second: GROUND_GRASS_1
+  - first:
+      33: 3300010
+    second: GROUND_GRASS_2
+  - first:
+      33: 3300012
+    second: GROUND_GRASS_3
+  - first:
+      33: 3300014
+    second: GROUND_GRASS_4
+  - first:
+      33: 3300016
+    second: GROUND_GRASS_5
+  - first:
+      33: 3300018
+    second: GROUND_GRASS_6
+  - first:
+      33: 3300020
+    second: GROUND_GRASS_6_001
+  - first:
+      33: 3300022
+    second: GROUND_GRASS_6_002
+  - first:
+      33: 3300024
+    second: GROUND_GRASS_6_003
+  - first:
+      33: 3300026
+    second: GROUND_GROUND
+  - first:
+      33: 3300028
+    second: SKID0
+  - first:
+      33: 3300030
+    second: SKID1
+  - first:
+      33: 3300032
+    second: SKID2
+  - first:
+      33: 3300034
+    second: SKID_ON_WALL
+  - first:
+      33: 3300036
+    second: TRANS_GRASS
+  - first:
+      33: 3300038
+    second: TRANS_TREE
+  - first:
+      33: 3300040
+    second: TRANS_TREE2
+  - first:
+      33: 3300042
+    second: TRANS_TREES
+  - first:
+      43: 4300000
+    second: GROUND_GRASS_6_003
+  - first:
+      43: 4300002
+    second: GROUND_GRASS_6_002
+  - first:
+      43: 4300004
+    second: GROUND_GRASS_6_001
+  - first:
+      43: 4300006
+    second: TRANS_TREES
+  - first:
+      43: 4300008
+    second: TRANS_TREE2
+  - first:
+      43: 4300010
+    second: TRANS_TREE
+  - first:
+      43: 4300012
+    second: BLOCK_001
+  - first:
+      43: 4300014
+    second: GROUND_GROUND
+  - first:
+      43: 4300016
+    second: GROUND_GRASS_5
+  - first:
+      43: 4300018
+    second: GROUND_GRASS_4
+  - first:
+      43: 4300020
+    second: GROUND_GRASS_3
+  - first:
+      43: 4300022
+    second: GROUND_GRASS_2
+  - first:
+      43: 4300024
+    second: GROUND_GRASS_0
+  - first:
+      43: 4300026
+    second: GROUND_GRASS_1
+  - first:
+      43: 4300028
+    second: BLOCK
+  - first:
+      43: 4300030
+    second: BUILDING
+  - first:
+      43: 4300032
+    second: GROUND_GRASS_6
+  - first:
+      43: 4300034
+    second: SKID1
+  - first:
+      43: 4300036
+    second: SKID2
+  - first:
+      43: 4300038
+    second: SKID0
+  - first:
+      43: 4300040
+    second: TRANS_GRASS
+  - first:
+      43: 4300042
+    second: SKID_ON_WALL
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -134,6 +374,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -157,32 +398,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 2
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -192,14 +450,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

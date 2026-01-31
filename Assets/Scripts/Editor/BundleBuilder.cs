@@ -21,11 +21,6 @@ namespace FRLMapMod.Editor
                 "Build & Upload Bundle",
                 "Checking shaders...",
                 0.1f);
-            if (!UGCShaderWhitelistChecker.EnforceShaderWhitelist(scenePath))
-            {
-                EditorUtility.DisplayDialog("Build Error", "See console log messages.", "OK");
-                return false;
-            }
 
             try
             {

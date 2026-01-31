@@ -128,11 +128,15 @@ namespace FRLMapMod.Editor
                 var allowedShaders = new HashSet<string>
                 {
                     "FR Legend/Car Outline",
-                    "FR Legend/Hard Edge Unlit",
-                    "FR Legend/SkidMarks",
+                    "FR Legend/Car Outline Simple", 
                     "FR Legend/Toon Outline",
+                    "FR Legend/Toon",
+                    "FR Legend/SkidMarks",
+                    "FR Legend/Hard Edge Unlit",
+                    "FR Legend/Soft Edge Unlit",
                     "Projector/Multiply",
                     "Sprites/Default",
+                    "FR Legend/Mountain Fog",
                 };
 
                 // 遍历 Renderer，实时检查 sharedMaterials，发现第一个不允许的立即返回失败并包含场景路径

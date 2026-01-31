@@ -2,6 +2,8 @@
 #ifndef TOON_LIB
 #define TOON_LIB
 
+			#pragma multi_compile_fog
+
 			fixed4 _Color;
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
@@ -23,7 +25,7 @@
 				float3 worldPos : TEXCOORD2;
 				float3 normalDir : TEXCOORD3;
 				float3 viewDir : TEXCOORD4;
-				// SHADOW_COORDS(5)
+                UNITY_FOG_COORDS(5)
 			};
 			
 			v2f vert (a2v v) {
@@ -40,7 +42,7 @@
 				o.viewDir = mul(modelMatrix, v.vertex).xyz - _WorldSpaceCameraPos;
 				o.normalDir = normalize(mul(float4(v.normal, 0.0), modelMatrixInverse).xyz);
 
-				// TRANSFER_SHADOW(o);
+				UNITY_TRANSFER_FOG(o, o.pos);
 				
 				return o;
 			}
@@ -69,7 +71,9 @@
 				
 				diffuse = ambient + diffuse + specular;
 				
-				return fixed4(diffuse, 1.0);
+				fixed4 col = fixed4(diffuse, 1.0);
+                UNITY_APPLY_FOG(i.fogCoord, col);
+				return col;
 			}
             
 #endif // TOON_LIB
