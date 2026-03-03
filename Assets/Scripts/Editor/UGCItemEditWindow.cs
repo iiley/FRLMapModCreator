@@ -68,6 +68,8 @@ namespace FRLMapMod.Editor
         private bool _isUploading = false;
         private bool _isDestroyed = false;
         private GUIStyle _richLabelStyle;
+        // 新增：滚动位置
+        private Vector2 _scrollPos = Vector2.zero;
 
         /// <summary>
         /// Opens the edit window for a given UGC item.
@@ -197,6 +199,7 @@ namespace FRLMapMod.Editor
                 return;
             }
 
+            _scrollPos = EditorGUILayout.BeginScrollView(_scrollPos);
             EditorGUILayout.LabelField("UGC Map Item", EditorStyles.boldLabel);
             EditorGUILayout.Space();
 
@@ -204,6 +207,7 @@ namespace FRLMapMod.Editor
             EditorGUILayout.Space();
             DrawEditableFields();
             EditorGUILayout.Space();
+            EditorGUILayout.EndScrollView();
         }
 
         private void DrawReadonlyInfo()
