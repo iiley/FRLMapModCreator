@@ -16,6 +16,8 @@ public class RaceManager : MonoBehaviour {
 
 	//The initial positions and headings of online players in multiplayer
 	[SerializeField] public Transform[] onlineLocators;
+	[Tooltip("If this map supports lap check zones, please assign them here.")]
+	[SerializeField] public LapCheckZone[] lapCheckZones;
 	
 	//Game intro camera position and motion direction
 	public Transform cameraStartPosition;

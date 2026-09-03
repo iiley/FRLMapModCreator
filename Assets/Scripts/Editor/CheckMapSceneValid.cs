@@ -137,6 +137,8 @@ namespace FRLMapMod.Editor
                     "Projector/Multiply",
                     "Sprites/Default",
                     "FR Legend/Mountain Fog",
+                    "Mobile/Particles/Alpha Blended", 
+                    "GUI/Text Shader", 
                 };
 
                 // 遍历 Renderer，实时检查 sharedMaterials，发现第一个不允许的立即返回失败并包含场景路径
