@@ -1,4 +1,4 @@
-By creating, submitting, or uploading Content for FR Legends, you acknowledge that you have read, understood, and agreed to the terms of this Agreement:  
+﻿By creating, submitting, or uploading Content for FR Legends, you acknowledge that you have read, understood, and agreed to the terms of this Agreement:  
 [FR Legends Custom Track Creator Agreement](FR_Legends_Custom_Track_Creator_Agreement.md)
 
 - **WARNING: Copyrighted content is prohibited.**
@@ -38,6 +38,19 @@ Save your scene as, for example, `YourTrack.unity`.
 > - Remove any unused assets from the scene.
 
 > About the Layers, make sure the ground is using the "Ground" layer, Walls is using "Wall" layer, and all other objects are using the "Default" layer.
+
+
+### Lap Timing (optional)
+
+A track can offer lap timing. The in-game **Lap Timing** toggle only appears for tracks that were uploaded with a Lap Manager assigned. `MapExample048.unity` is the reference setup.
+
+1. **GameObject → FR Legend → Lap Manager** creates a `Lap Manager` node with one zone. Keep this node at position 0, rotation 0, scale 1.
+2. Click **Add Zone** in the Lap Manager Inspector for every checkpoint. The direct children, in Hierarchy order, are the lap order; every child must have a `Lap Check Zone` component. Do not deactivate a zone — remove it from the node instead.
+3. Place each zone: the blue Z axis (yellow arrow in the Scene view) is the driving direction, only crossings in that direction count. Scale X/Y is the gate width/height (drag the green edge handles in the Scene view); Scale Z stays 1. **Snap To Ground** keeps the bottom edge on the `Ground` layer.
+4. Zone 0 is the start line. With **Same Start Finish** on, it is also the finish line; off, the last zone is the finish.
+5. Optional sectors: tick **Enable Sectors** on the Lap Manager (needs Same Start Finish) and tick **Sector End** on the middle zones that end a sector. The Inspector lists the resulting sectors.
+6. Assign the Lap Manager to **RaceManager → Lap Manager**. Build & Upload fails if a Lap Manager exists but is not assigned, or if its setup is invalid.
+7. **Default Visual** shows the built-in translucent gate and number sign in the game; untick it when your map has its own gate art.
 
 ---
 
