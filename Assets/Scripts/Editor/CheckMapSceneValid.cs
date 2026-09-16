@@ -21,6 +21,8 @@ namespace FRLMapMod.Editor
         /// - EventSystem
         /// - DriftCamera
         /// - Skidmarks
+        /// Lap timing (optional): at most one LapManager; if one exists it must be assigned to
+        /// RaceManager.lapManager and its zone setup must be valid (LapManager.TryBuild).
         ///
         /// Returns true if valid; otherwise false. When invalid, an
         /// error message describing the problem is returned via
@@ -108,6 +110,16 @@ namespace FRLMapMod.Editor
                 }
             }
 
+            // Lap timing setup (optional)
+            {
+                var lapManagers = Object.FindObjectsOfType<LapManager>(true);
+                var rm = raceManagers.Length == 1 ? raceManagers[0] : null;
+                if (!CheckLapSetup(rm, lapManagers, sb))
+                {
+                    isValid = false;
+                }
+            }
+
             // 新增：辅助函数 - 获取 GameObject 在场景内的完整路径
             string GetGameObjectPath(GameObject go)
             {
@@ -185,6 +197,61 @@ namespace FRLMapMod.Editor
             }
 
             return isValid;
+        }
+
+        /// <summary>
+        /// Lap rules: at most one LapManager in the scene; if any exists, RaceManager.lapManager must be
+        /// assigned and LapManager.TryBuild must succeed. Sector warnings do not block (the Inspector shows
+        /// them). Appends one line per problem to <paramref name="sb"/>; returns false when any was found.
+        /// </summary>
+        public static bool CheckLapSetup(RaceManager rm, LapManager[] lapManagers, System.Text.StringBuilder sb)
+        {
+            bool ok = true;
+            int count = lapManagers?.Length ?? 0;
+            if (count > 1)
+            {
+                sb.AppendLine($"Scene must contain at most one LapManager, found {count}.");
+                ok = false;
+            }
+            if (rm == null) return ok;
+
+            if (!rm.lapManager)
+            {
+                if (count > 0)
+                {
+                    sb.AppendLine("Scene contains a LapManager but RaceManager.lapManager is not assigned.");
+                    ok = false;
+                }
+                return ok;
+            }
+
+            if (!rm.lapManager.TryBuild(out _, out _, out var error, out _))
+            {
+                sb.AppendLine($"RaceManager.lapManager is invalid: {error}");
+                ok = false;
+            }
+            return ok;
+        }
+
+        /// <summary>
+        /// A map has lap timing when its single RaceManager has a LapManager assigned. This is what is
+        /// reported to the catalog item (DisplayProperty "laptiming") at bundle upload.
+        /// </summary>
+        public static bool HasLapTiming(RaceManager[] raceManagers)
+        {
+            return raceManagers != null && raceManagers.Length == 1 && raceManagers[0].lapManager;
+        }
+
+        public static bool HasLapTimingInActiveScene()
+        {
+            return HasLapTiming(Object.FindObjectsOfType<RaceManager>(true));
+        }
+
+        /// <summary>Asset-path equality that ignores separator style and case.</summary>
+        public static bool SamePath(string a, string b)
+        {
+            if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b)) return false;
+            return string.Equals(a.Replace('\\', '/'), b.Replace('\\', '/'), System.StringComparison.OrdinalIgnoreCase);
         }
     }
 }
