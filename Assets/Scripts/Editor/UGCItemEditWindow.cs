@@ -896,6 +896,14 @@ namespace FRLMapMod.Editor
                 return;
             }
 
+            if (activeScene.isDirty)
+            {
+                EditorUtility.DisplayDialog("Publish Failed",
+                    "Save the scene before Build & Upload: the bundle is built from the scene file on disk.",
+                    "OK");
+                return;
+            }
+
             if (!CheckMapSceneValid.CheckCurrentScene(out var errorMessage))
             {
                 EditorUtility.DisplayDialog("Publish Failed",
