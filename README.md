@@ -44,7 +44,7 @@ Save your scene as, for example, `YourTrack.unity`.
 
 A track can offer lap timing. The in-game **Lap Timing** toggle only appears for tracks that were uploaded with a Lap Manager assigned. `MapExample048.unity` is the reference setup.
 
-1. **GameObject → FR Legend → Lap Manager** creates a `Lap Manager` node with one zone. Keep this node at position 0, rotation 0, scale 1.
+1. **GameObject → FR Legend → Lap Manager** creates a `Lap Manager` node with one zone. Keep its rotation at 0 and its scale at 1 (its position does not matter).
 2. Click **Add Zone** in the Lap Manager Inspector for every checkpoint. The direct children, in Hierarchy order, are the lap order; every child must have a `Lap Check Zone` component. Do not deactivate a zone — remove it from the node instead.
 3. Place each zone: the blue Z axis (yellow arrow in the Scene view) is the driving direction, only crossings in that direction count. Scale X/Y is the gate width/height (drag the green edge handles in the Scene view); Scale Z stays 1. **Snap To Ground** keeps the bottom edge on the `Ground` layer.
 4. Zone 0 is the start line. With **Same Start Finish** on, it is also the finish line; off, the last zone is the finish.

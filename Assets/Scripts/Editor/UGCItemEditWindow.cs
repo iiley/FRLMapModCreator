@@ -872,12 +872,27 @@ namespace FRLMapMod.Editor
 
         private void BuildAndUploadBundle()
         {
-            var activeScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+            if (string.IsNullOrEmpty(_item.ScenePath))
+            {
+                EditorUtility.DisplayDialog("Publish Failed",
+                    "This item has no Scene Path. Set the scene path and click Save before Build & Upload.",
+                    "OK");
+                return;
+            }
+
+            var activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            var activeScenePath = activeScene.path;
             if (!CheckMapSceneValid.SamePath(activeScenePath, _item.ScenePath))
             {
                 EditorUtility.DisplayDialog("Publish Failed",
                     $"Open the item's scene before Build & Upload.\n\nItem scene: {_item.ScenePath}\nOpen scene: {activeScenePath}",
                     "OK");
+                return;
+            }
+
+            if (activeScene.isDirty && !UnityEditor.SceneManagement.EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            {
+                // The bundle is built from the scene asset on disk; validation and lap-timing detection read the open scene
                 return;
             }
 
