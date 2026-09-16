@@ -1226,7 +1226,11 @@ namespace FRLMapMod.Editor
                     onCompleted?.Invoke(false);
                     return;
                 }
-                
+
+                // Detected from the scene that was just built (the edit window guarantees it is the active scene)
+                var lapTiming = CheckMapSceneValid.HasLapTimingInActiveScene();
+                Debug.Log($"[UGCService] laptiming = {lapTiming}");
+
                 var createRequest = new CreateUploadUrlsRequest
                 {
                     AuthenticationContext = AuthContext, 
@@ -1301,6 +1305,7 @@ namespace FRLMapMod.Editor
                             },
                             SizeIos = iosMb,
                             SizeAnd = andMb,
+                            LapTiming = lapTiming,
                         };
                         EditorUtility.DisplayProgressBar("Build & Upload Bundle", "Updating item...", 1f);
                         UpdateDraftFiles(item, filesArg, ok =>
@@ -1376,6 +1381,7 @@ namespace FRLMapMod.Editor
         public double? SizeAnd;
         public double? SizeIos;
         public double? SizeWin;
+        public bool? LapTiming; // whether the uploaded scene has a LapManager assigned; written as DisplayProperty "laptiming" by the server
 
         public Dictionary<string, object> ToDictionary(string id)
         {
@@ -1387,6 +1393,7 @@ namespace FRLMapMod.Editor
             if (SizeAnd != null) dict["SizeAnd"] = SizeAnd;
             if (SizeIos != null) dict["SizeIos"] = SizeIos;
             if (SizeWin != null) dict["SizeWin"] = SizeWin;
+            if (LapTiming != null) dict["LapTiming"] = LapTiming;
             return dict;
         }
     }

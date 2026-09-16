@@ -872,7 +872,15 @@ namespace FRLMapMod.Editor
 
         private void BuildAndUploadBundle()
         {
-            
+            var activeScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+            if (!CheckMapSceneValid.SamePath(activeScenePath, _item.ScenePath))
+            {
+                EditorUtility.DisplayDialog("Publish Failed",
+                    $"Open the item's scene before Build & Upload.\n\nItem scene: {_item.ScenePath}\nOpen scene: {activeScenePath}",
+                    "OK");
+                return;
+            }
+
             if (!CheckMapSceneValid.CheckCurrentScene(out var errorMessage))
             {
                 EditorUtility.DisplayDialog("Publish Failed",
