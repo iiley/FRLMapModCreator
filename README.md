@@ -9,7 +9,8 @@ By creating, submitting, or uploading Content for FR Legends, you acknowledge th
 
 ## Tutorials
 
-**New:** [Lap Timing Tutorial — add lap timing to your custom track](docs/LapTiming.md)
+**New:** [Lap Timing Tutorial — add lap timing to your custom track](docs/LapTiming.md)  
+**For tournament organizers:** [Tournament Timing API — read live lap and sector times of your event room](docs/TournamentTimingApi/README.md)
 
 ### Video Tutorial made by Rokas RX
 [![Demo Video](docs/images/videot1.jpg)](https://www.youtube.com/watch?v=RpBkBHnKQ0U)
