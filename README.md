@@ -9,6 +9,8 @@ By creating, submitting, or uploading Content for FR Legends, you acknowledge th
 
 ## Tutorials
 
+**New:** [Lap Timing Tutorial — add lap timing to your custom track](docs/LapTiming.md)
+
 ### Video Tutorial made by Rokas RX
 [![Demo Video](docs/images/videot1.jpg)](https://www.youtube.com/watch?v=RpBkBHnKQ0U)
 
@@ -42,7 +44,9 @@ Save your scene as, for example, `YourTrack.unity`.
 
 ### Lap Timing (optional)
 
-A track can offer lap timing. The in-game **Lap Timing** toggle only appears for tracks that were uploaded with a Lap Manager assigned. `MapExample048.unity` is the reference setup.
+> **Full tutorial:** [Lap Timing Tutorial](docs/LapTiming.md) — every parameter explained, gate art advice, sectors and the Tournament Timing API. The steps below are the short version.
+
+A track can offer lap timing. The in-game **Lap Timing** toggle only appears for tracks that were uploaded with a Lap Manager assigned. `MapExample049.unity` is the reference setup.
 
 1. **GameObject → FR Legend → Lap Manager** creates a `Lap Manager` node with one zone. Keep its rotation at 0 and its scale at 1 (its position does not matter).
 2. Click **Add Zone** in the Lap Manager Inspector for every checkpoint. The direct children, in Hierarchy order, are the lap order; every child must have a `Lap Check Zone` component. Do not deactivate a zone — remove it from the node instead.
