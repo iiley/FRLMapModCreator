@@ -177,7 +177,13 @@ If the sector setup is not valid (see [Troubleshooting](#8-troubleshooting)) the
    - the assigned Lap Manager shows a red **error** in its Inspector.
 
    Yellow sector warnings do not block the upload.
-3. In the game, open **Custom Tracks → My Drafts**, choose your track, tick **Lap Timing** and start. Then check:
+3. In the game, open **Custom Tracks → My Drafts** and choose your track to open its details page.
+
+   ![Lap Timing Supported badge on the draft's details page](images/lap/5.jpg)
+
+   If lap timing is set up correctly, the details page shows the **Lap Timing Supported** badge (stopwatch icon), as in the screenshot above. If the badge is missing, the map was uploaded without a Lap Manager assigned to the RaceManager — go back to step 1 and **Build & Upload** again.
+
+4. With the badge showing, tap **Preview** to enter the map and test that lap timing really works. Check that:
    - a lap is recorded when you drive the full layout through every gate;
    - every shortcut you can think of does **not** produce a lap;
    - driving through a gate backwards does not count;
@@ -202,7 +208,7 @@ If something is off, fix the scene and **Build & Upload** again to update the dr
 | `Not a child of a Lap Manager: this zone is ignored at runtime` | Drag the zone under the Lap Manager node. |
 | Build says `Scene contains a LapManager but RaceManager.lapManager is not assigned` | Drag the Lap Manager into **RaceManager → Lap Manager**. |
 | Build says `Scene must contain at most one LapManager` | Delete the extra Lap Manager. |
-| No **Lap Timing** toggle in the game | The map was uploaded without a Lap Manager assigned. Assign it and **Build & Upload** again. |
+| No **Lap Timing Supported** badge on the details page / no **Lap Timing** toggle in the game | The map was uploaded without a Lap Manager assigned. Assign it and **Build & Upload** again. |
 | Laps are not counted | A gate points the wrong way (check the yellow arrows), a gate is too narrow or too low, or the zones are in the wrong order in the Hierarchy. |
 | A gate floats or sinks into the road | Your road is not on the **`Ground`** layer, or **Snap To Ground** is off. |
 | Gates look the wrong size | The Lap Manager node (or one of its parents) is rotated or scaled. Reset it to rotation 0, scale 1. |

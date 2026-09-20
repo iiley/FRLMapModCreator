@@ -12,9 +12,27 @@ Sector times (`sectors`) are only available on tracks whose author set up sector
 
 - Base URL: `http://<server-ip>:56102` (the game server's IP; ask us which server hosts your room).
 - Auth: header `X-Api-Key: <your key>`. Keys are issued per organizer (see above for how to apply) and can be revoked.
-- Only rooms created **with a key** and still alive can be queried. When the room is closed (last player leaves) its data is gone: keep your own copy by polling.
+- Only rooms created **with a Room Key** and still alive can be queried — see [What is the Room Key?](#what-is-the-room-key) below. When the room is closed (last player leaves) its data is gone: keep your own copy by polling.
 - All times are server UTC milliseconds. All lap/sector times are milliseconds (integers). Player `id` is a **string** (64-bit).
 - Lap times are reported by the game client and only format-checked by the server. There is no anti-cheat, no invalid-lap flag, no race position / interval (the server does not know track position).
+
+### What is the Room Key?
+
+The **Room Key** is what the host types on the game's **Create Room** screen: tick the **Room Key** checkbox and enter a key (`8054` in the screenshot). That same value is the `{roomKey}` in the endpoint URLs below — it is how your backend tells the server *which room* it wants.
+
+![Room Key field on the Create Room screen](../images/lap/roomkey.jpg)
+
+- A room created **without** the Room Key checkbox ticked cannot be queried at all.
+- The host of your event must create the room with the key you agreed on, and your backend must use exactly the same key.
+
+Do not confuse the two keys:
+
+| | Room Key | API key |
+|---|---|---|
+| What it is | Identifies **one room** | Identifies **you**, the organizer |
+| Who sets it | The room host, in the game's Create Room screen | Issued to you by the FR Legends team |
+| Where it goes | In the URL: `/v1/rooms/{roomKey}/...` | In the `X-Api-Key` request header |
+| Who knows it | You and the room host | **Only you** — keep it secret, on your backend |
 
 ## 2. Endpoints
 
@@ -115,3 +133,7 @@ See `timing_poll.py` (Python 3, standard library only) for a complete implementa
 ## 5. What you can build from this data
 
 Best-lap leaderboard (sort players by `bestMs`), gap to leader (`bestMs - leader.bestMs`), last lap (highest `seq` per player), lap counts, per-sector personal/overall bests (purple/green highlighting), lap-by-lap analysis per driver, consistency stats, and a "new lap / new best" ticker from each incremental response.
+
+## Credits
+
+- **kinkpedil12 (Fadly Alfarizy)** — project **FRLcast**: [https://www.frlcast.my.id](https://www.frlcast.my.id)

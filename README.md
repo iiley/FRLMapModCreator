@@ -107,7 +107,7 @@ After publishing, the track will enter the review process and await approval by 
 1. Open **FR Legends** on your mobile device.
 2. Navigate to **Custom Tracks → My Drafts**.
 3. Select your uploaded track to open its details page.
-4. Tap **Play** to test the track in-game and verify that it runs correctly.
+4. Tap **Preview** to test the track in-game and verify that it runs correctly.
 
 ![Step 6 - Test Track](/docs/images/drafts.jpg)
 
