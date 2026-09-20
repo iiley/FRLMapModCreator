@@ -52,7 +52,7 @@ A track can offer lap timing. The in-game **Lap Timing** toggle only appears for
 2. Click **Add Zone** in the Lap Manager Inspector for every checkpoint. The direct children, in Hierarchy order, are the lap order; every child must have a `Lap Check Zone` component. Do not deactivate a zone — remove it from the node instead.
 3. Place each zone: the blue Z axis (yellow arrow in the Scene view) is the driving direction, only crossings in that direction count. Scale X/Y is the gate width/height (drag the green edge handles in the Scene view); Scale Z stays 1. **Snap To Ground** keeps the bottom edge on the `Ground` layer.
 4. Zone 0 is the start line. With **Same Start Finish** on, it is also the finish line; off, the last zone is the finish.
-5. Optional sectors: tick **Enable Sectors** on the Lap Manager (needs Same Start Finish) and tick **Sector End** on the middle zones that end a sector. The Inspector lists the resulting sectors.
+5. Optional sectors: tick **Enable Sectors** on the Lap Manager (needs Same Start Finish) and tick **Sector End** on the middle zones that end a sector. The Inspector lists the resulting sectors. Sector times are never shown in the game; they are only delivered to tournament organizers through the [Tournament Timing API](docs/TournamentTimingApi/README.md), so most tracks can skip this step.
 6. Assign the Lap Manager to **RaceManager → Lap Manager**. Build & Upload fails if a Lap Manager exists but is not assigned, or if its setup is invalid.
 7. **Default Visual** shows the built-in translucent gate and number sign in the game; untick it when your map has its own gate art.
 

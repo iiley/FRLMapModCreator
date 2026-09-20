@@ -63,7 +63,7 @@ The rest of this page explains each step and every parameter.
 | Parameter | Default | Meaning |
 |---|---|---|
 | **Same Start Finish** | on | **On:** zone 0 is both the start line and the finish line. Use this for circuits — the lap runs zone 0 → 1 → … → last → back to zone 0, and the next lap starts immediately. **Off:** zone 0 is the start and the **last zone is the finish**. Use this for point-to-point tracks (touge, hill climb, sprint). |
-| **Enable Sectors** | off | Splits the lap into sectors for split timing. Requires **Same Start Finish** and at least one middle zone marked **Sector End**. See [Sectors](#6-sectors). |
+| **Enable Sectors** | off | Splits the lap into sectors for split timing. Requires **Same Start Finish** and at least one middle zone marked **Sector End**. **Sector times are never shown in the game — they only reach tournament organizers through the Tournament Timing API, so most tracks should leave this off.** See [Sectors](#6-sectors). |
 
 ### What the Inspector shows you
 
@@ -101,7 +101,7 @@ In the Scene view each gate is drawn as a translucent green rectangle with a yel
 | Parameter | Default | Meaning |
 |---|---|---|
 | **Snap To Ground** | on | Whenever you move, rotate or resize the zone in the editor, it raycasts down and rests the **bottom edge** of the gate on the surface below. It only hits objects on the **`Ground` layer**, so make sure your road uses that layer. Untick it if you need to place a gate manually (bridges, crossovers, tunnels under another road). |
-| **Sector End** | off | Crossing this gate ends the current sector and starts the next. Only used when **Enable Sectors** is on in the Lap Manager; ignored on zone 0. You can also tick it from the Lap Manager's zone table. |
+| **Sector End** | off | Crossing this gate ends the current sector and starts the next. Only used when **Enable Sectors** is on in the Lap Manager; ignored on zone 0. You can also tick it from the Lap Manager's zone table. Only relevant for tournaments that use the Tournament Timing API — see [Sectors](#6-sectors). |
 | **Default Visual** | on | Shows the built-in in-game look for this gate. **Read the next section before you ship with this on.** |
 
 Below the parameters the Inspector reminds you of the axis rules and tells you where this zone sits in the lap, e.g. `Zone #0 of Lap Manager — Start/Finish, ends S3, starts S1`. **Select Lap Manager** jumps back to the parent. If you see *"Not a child of a Lap Manager: this zone is ignored at runtime"*, the zone is in the wrong place in the Hierarchy.
@@ -138,7 +138,13 @@ Unticking Default Visual only hides the in-game look. The gate still times laps,
 
 Sectors split the lap into consecutive parts (S1, S2, S3 …) and record a split time for each.
 
-To set them up:
+> ### ⚠️ Read this first — most tracks do not need sectors
+>
+> **The game client never shows sector times.** Players only ever see their lap times. Sector times are recorded with each lap and delivered **only to tournament organizers through the [Tournament Timing API](TournamentTimingApi/README.md)** (the `sectors` array of each lap), where organizers use them for live timing pages with split times and purple / green sector highlighting.
+>
+> That means sectors are useful **only** when a tournament is run on your track by an organizer who reads the Tournament Timing API. **If that is not your case, there is normally no reason to set up sectors** — leave **Enable Sectors** off and skip this section. Lap timing works fully without them, and regular players will not notice any difference.
+
+If your track is meant to host such tournaments, set sectors up as follows (three sectors of roughly similar length is the motorsport convention):
 
 1. Make sure **Same Start Finish** is on — sectors are only available on circuits.
 2. Tick **Enable Sectors** on the Lap Manager.
@@ -161,11 +167,6 @@ S3  Check3 → Check4 → Check0
 The Lap Manager Inspector lists the sectors exactly like this, and the Scene view alternates the line color per sector and labels each segment, so you can verify the split visually.
 
 If the sector setup is not valid (see [Troubleshooting](#8-troubleshooting)) the Inspector shows a yellow warning and **sectors are switched off** — lap timing itself keeps working and the upload is not blocked.
-
-> **Note — sector times are not shown in the game.**
-> The game client displays lap times only. Sector times are recorded with every lap and delivered **only to tournament organizers through the [Tournament Timing API](TournamentTimingApi/README.md)**, where they appear as the `sectors` array of each lap. Organizers use them to build live timing pages with split times and purple / green sector highlighting.
->
-> So set up sectors if you would like your track to be a good tournament venue — three sectors of roughly similar length is the motorsport convention. If you skip them, nothing changes for regular players.
 
 ## 7. Assign, upload and test
 
