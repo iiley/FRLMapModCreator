@@ -10,11 +10,56 @@ Sector times (`sectors`) are only available on tracks whose author set up sector
 
 ## 1. Basics
 
-- Base URL: `http://<server-ip>:56102` (the game server's IP; ask us which server hosts your room).
+- Base URL: `http://<server-ip>:56102`, where `<server-ip>` is the IP of the game server (region) hosting your room. Look it up with your API key — see [Finding the server IP](#finding-the-server-ip) below.
 - Auth: header `X-Api-Key: <your key>`. Keys are issued per organizer (see above for how to apply) and can be revoked.
 - Only rooms created **with a Room Key** and still alive can be queried — see [What is the Room Key?](#what-is-the-room-key) below. When the room is closed (last player leaves) its data is gone: keep your own copy by polling.
 - All times are server UTC milliseconds. All lap/sector times are milliseconds (integers). Player `id` is a **string** (64-bit).
 - Lap times are reported by the game client and only format-checked by the server. There is no anti-cheat, no invalid-lap flag, no race position / interval (the server does not know track position).
+
+### Finding the server IP
+
+Each game server region has its own IP, and a room lives on the server of the region the host was connected to when creating it. Server IPs can change, so do not hard-code them: look the current IP up with the same API key.
+
+```
+GET https://twinturbogames.com/api/servers.php?region=<Region>
+X-Api-Key: <your key>
+```
+
+```bash
+curl -H "X-Api-Key: <your key>" "https://twinturbogames.com/api/servers.php?region=EastAsia"
+```
+
+Response (`200`):
+
+```json
+{ "ip": "203.0.113.10" }
+```
+
+Then use `http://<ip>:56102` as the base URL for the endpoints in section 2.
+
+`region` is case-sensitive and must be one of:
+
+| `region` | Server |
+|---|---|
+| `EastAsia` | East Asia |
+| `SoutheastAsia` | Southeast Asia |
+| `JapanWest` | Japan West |
+| `AustraliaSoutheast` | Australia Southeast |
+| `NorthEurope` | North Europe |
+| `WestEurope` | West Europe |
+| `EastUs` | East US |
+| `WestUs` | West US |
+| `BrazilSouth` | Brazil South |
+
+Errors of this lookup (shape `{ "error": "<message>" }`; these are separate from the Timing API errors in section 3):
+
+| HTTP | `error` | Meaning |
+|---|---|---|
+| 400 | `missing region` | No `region` parameter |
+| 401 | `unauthorized` | Missing or unknown `X-Api-Key` |
+| 404 | `unknown region` | `region` is not in the list above (check spelling and case) |
+
+Unlike the Timing API itself, this lookup is served over **HTTPS**. Still call it from your backend only, so your API key stays private. Resolve the IP once when your backend starts (and again if the Timing API stops answering) rather than before every request.
 
 ### What is the Room Key?
 
