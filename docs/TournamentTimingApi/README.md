@@ -136,4 +136,5 @@ Best-lap leaderboard (sort players by `bestMs`), gap to leader (`bestMs - leader
 
 ## Credits
 
+- Idea originally requested by **FGCS – FRL GT Championship Series** — Instagram: [https://www.instagram.com/fgcs.league/](https://www.instagram.com/fgcs.league/)
 - **kinkpedil12 (Fadly Alfarizy)** — project **FRLcast**: [https://www.frlcast.my.id](https://www.frlcast.my.id)
